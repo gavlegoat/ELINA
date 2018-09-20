@@ -191,14 +191,20 @@ opt_pk_array_t* opt_pk_of_box(elina_manager_t* man,
 	comp_list_t *cl = create_comp_list();
 	insert_comp(cl,k+opk->dec);
 	insert_comp_list(acl,cl);
-	res = opt_matrix_fill_constraint_interval(opk,poly[k1]->C,opk->dec-1,array[k],1,0,true);
+  if (k1 < intdim) {
+	  res = opt_matrix_fill_constraint_interval(opk,poly[k1]->C,opk->dec-1,array[k],1,0,true);
+  } else {
+    res = opt_matrix_fill_constraint_interval(opk,poly[k1]->C,opk->dec-1,array[k],0,1,false);
+  }
 	if (res==-1){
 		unsigned short int j;
     		for(j=0; j < dim; j++){
 			if(poly[k1]->C){
-				opt_matrix_free(poly[k1]->C);
+				//opt_matrix_free(poly[k1]->C);
+        opt_matrix_free(poly[j]->C);
 			}
-			free(poly[k1]);
+			//free(poly[k1]);
+      free(poly[j]);
 		}
 		free_array_comp_list(acl);
     		return opt_pk_bottom(man,intdim,realdim);

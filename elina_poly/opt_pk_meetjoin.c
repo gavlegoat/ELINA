@@ -883,7 +883,7 @@ opt_pk_array_t * opt_poly_join_gen(elina_manager_t *man, opt_pk_array_t *oa, opt
 	//print_array_comp_list(oa->acl,oa->maxcols);
 	//print_array_comp_list(ob->acl,ob->maxcols);
 	//fflush(stdout);
-	join_count++;
+	//join_count++;
 	opt_pk_internal_t *opk = opt_pk_init_from_manager(man, ELINA_FUNID_JOIN);
 	size_t i;
 	unsigned short int j,k;

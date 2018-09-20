@@ -23,6 +23,8 @@
 #ifndef __OPT_OCT_H_INCLUDED__
 #define __OPT_OCT_H_INCLUDED__
 
+#include "gmp.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
