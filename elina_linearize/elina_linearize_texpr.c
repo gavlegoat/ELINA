@@ -1506,8 +1506,8 @@ static bool elina_boxize_lincons0(elina_interval_t** res,
           elina_interval_free(interval);
           elina_scalar_free(scalar2);
 	elina_interval_set_bottom(res[0]);
-  elina_interval_free(interval);
-  elina_scalar_free(scalar2);
+  //elina_interval_free(interval);
+  //elina_scalar_free(scalar2);
 	return true;
       }
     }
