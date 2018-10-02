@@ -226,7 +226,8 @@ zonotope_t* zonotope_permute_dimensions(elina_manager_t* man, bool destructive, 
         //  res->paf[j] = res->paf[j+1];
         elina_interval_set(res->box[j],z->box[i]);
         if(!destructive)
-        res->paf[i]->pby++;
+          res->paf[j]->pby++;
+        //res->paf[i]->pby++;
         //}
     }
     
