@@ -39,6 +39,7 @@ zonotope_t* zonotope_copy(elina_manager_t* man, zonotope_t* z)
     res = zonotope_alloc(man, z->intdim, (z->dims - z->intdim));
     memcpy((void *)res->paf, (void *)z->paf, z->dims*sizeof(zonotope_aff_t*));
     for(i=0; i<z->dims; i++) {
+      //res->paf[i] = z->paf[i];
 	elina_interval_set(res->box[i], z->box[i]);
 	res->paf[i]->pby++;
     }
