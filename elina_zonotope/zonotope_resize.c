@@ -128,7 +128,7 @@ zonotope_t* zonotope_remove_dimensions(elina_manager_t* man, bool destructive, z
         //for (j=dimchange->dim[i];j<-1+res->dims;j++) {
         //  res->paf[j] = res->paf[j+1];
         elina_interval_set(res->box[i],z->box[j]);
-        if(!destructive)
+        //if(!destructive)
         res->paf[i]->pby++;
         //}
     }
@@ -227,7 +227,7 @@ zonotope_t* zonotope_permute_dimensions(elina_manager_t* man, bool destructive, 
         elina_interval_set(res->box[j],z->box[i]);
         if(!destructive)
           res->paf[j]->pby++;
-        //res->paf[i]->pby++;
+          //res->paf[i]->pby++;
         //}
     }
     
